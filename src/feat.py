@@ -4,7 +4,6 @@ import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import RobustScaler
-from tsmoothie.utils_func import create_windows
 
 # create a function that import data and preprocess
 
@@ -15,7 +14,7 @@ def data_load(path):
     RETURNS:
     """
     if os.path.exists(path):
-        df = pd.read_csv("path",header= 0, index_col= 0,  parse_dates=True, squeeze = True)
+        df = pd.read_csv(path,header= 0, index_col= 0,  parse_dates=True, squeeze = True)
         df= df.replace('[./d.]', '', regex = True).astype(int)
     else:
         print("File doesn't exist")
@@ -43,7 +42,7 @@ def data_split(data):
     test = test.reset_index(drop=True, inplace=True)
     return train, test
 
-def window_split(X= None, window_size = 12, end= None):
-    """"""
-    X = create_windows(X, window_shape = window_size, end_id= end)
-    return X.shape
+# def window_split(X= None, window_size = 12, end= None):
+#     """"""
+#     X = create_windows(X, window_shape = window_size, end_id= end)
+#     return X.shape

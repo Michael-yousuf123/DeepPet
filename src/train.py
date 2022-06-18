@@ -5,7 +5,7 @@ from keras.optimizers import *
 from kerashypetune import KerasGridSearch
 from keras.layers import Dense, LSTM, TimeDistributed, RepeatVector
 import random 
-from feature import *
+from feat import *
 
 def set_seed(seed):
     

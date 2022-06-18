@@ -1,2 +1,6 @@
 ant/
 __pycache__/
+.env/
+.vscode/
+kite-installer
+.env
