@@ -3,7 +3,7 @@ import re
 import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import RobustScaler
+from sklearn.preprocessing import MinMaxScaler, RobustScaler
 TRAINPATH="/home/miki/Desktop/Deployment/bacillus-anthracis/data/traincsv/train.csv" 
 TESTPATH="/home/miki/Desktop/Deployment/bacillus-anthracis/data/testcsv/test.csv" 
 
@@ -42,6 +42,6 @@ def check_index(x):
     return x
 def data_normalize(x):
     
-    scaler = RobustScaler()
+    scaler = MinMaxScaler()
     x = scaler.fit_transform(np.array(x).reshape(-1, 1)) 
     return x  
