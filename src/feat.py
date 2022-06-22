@@ -45,15 +45,3 @@ def data_normalize(x):
     scaler = RobustScaler()
     x = scaler.fit_transform(np.array(x).reshape(-1, 1)) 
     return x  
-def create_trtst(data):
-    train_dfs=[]
-    val_dfs = []
-    train_size = int(len(data) * 0.8)
-    df_train = data.iloc[0:train_size], 
-    df_test = data.iloc[train_size:len(data)]
-    train_dfs.append(df_train)
-    val_dfs.append(df_test)
-    tr = pd.DataFrame([train_dfs])
-    te = pd.DataFrame([val_dfs])
-    tr.to_csv('TRAINPATH', index=False)
-    te.to_csv('TESTPATH', index=False)
