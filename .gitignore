@@ -4,3 +4,4 @@ __pycache__/
 .vscode/
 kite-installer
 .env
+time
